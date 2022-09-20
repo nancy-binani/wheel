@@ -4,9 +4,10 @@ import { Search, Plus, Settings } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
-const NotesMenuBar = () => {
+const SideMenuBar = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
   const [showMenu, setShowMenu] = useState(true);
+
   return (
     <MenuBar showMenu={showMenu} title="Notes">
       <MenuBar.Block active count={13} label="All" />
@@ -67,4 +68,4 @@ const NotesMenuBar = () => {
   );
 };
 
-export default NotesMenuBar;
+export default SideMenuBar;

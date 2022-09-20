@@ -4,7 +4,7 @@ import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";
-import NotesMenuBar from "components/Common/NotesMenuBar";
+import SideMenuBar from "components/Dashboard/Notes/SideMenuBar";
 import {
   PROFILE_PATH,
   CHANGE_PASSWORD_PATH,
@@ -65,7 +65,7 @@ const Sidebar = () => {
         }}
         onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
-      <NotesMenuBar />
+      <SideMenuBar />
     </>
   );
 };

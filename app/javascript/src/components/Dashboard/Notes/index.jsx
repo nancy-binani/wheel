@@ -6,6 +6,7 @@ import { Container, Header } from "neetoui/layouts";
 import notesApi from "apis/notes";
 
 import DeleteAlert from "./DeleteAlert";
+import MainContent from "./Note";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,8 @@ const Notes = () => {
   return (
     <Container>
       <Header
+        menuBarToggle={() => {}}
+        title="All Notes"
         actionBlock={
           <Button
             icon="ri-add-line"
@@ -52,6 +55,7 @@ const Notes = () => {
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
+      <MainContent />
       {showDeleteAlert && (
         <DeleteAlert
           refetch={fetchNotes}
