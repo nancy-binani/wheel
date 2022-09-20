@@ -6,8 +6,9 @@ import { MenuBar } from "neetoui/layouts";
 
 const NotesMenuBar = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
+  const [showMenu, setShowMenu] = useState(true);
   return (
-    <MenuBar title="Notes">
+    <MenuBar showMenu={showMenu} title="Notes">
       <MenuBar.Block active count={13} label="All" />
       <MenuBar.Block count={2} label="Users" />
       <MenuBar.Block count={7} label="Leads" />
