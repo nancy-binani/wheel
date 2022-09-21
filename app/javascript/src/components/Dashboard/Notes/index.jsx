@@ -5,9 +5,14 @@ import { Container, Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
+<<<<<<< HEAD
 import List from "./List";
 import NewNotePane from "./Pane/Create";
 import SideMenu from "./SideMenu";
+=======
+import Note from "./Note";
+import NewNotePane from "./Pane/Create";
+>>>>>>> f728f71 (Fixed changes according to PR reviews)
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
