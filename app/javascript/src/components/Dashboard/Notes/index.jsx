@@ -26,6 +26,10 @@ const Notes = () => {
     setLoading(false);
   };
 
+  const handleDelete = () => {
+    setShowDeleteAlert(true);
+  };
+
   if (loading) {
     return <PageLoader />;
   }
