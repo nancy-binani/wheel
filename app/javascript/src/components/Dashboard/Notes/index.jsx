@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import notesApi from "apis/notes";
-
+import { NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import MainContent from "./Note";
+import Note from "./Note";
+import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -14,24 +14,15 @@ const Notes = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(NOTES);
 
   useEffect(() => {
     fetchNotes();
   }, []);
 
-  const fetchNotes = async () => {
-    try {
-      setLoading(true);
-      const {
-        data: { notes },
-      } = await notesApi.fetch();
-      setNotes(notes);
-    } catch (error) {
-      logger.error(error);
-    } finally {
-      setLoading(false);
-    }
+  const fetchNotes = () => {
+    setNotes(notes);
+    setLoading(false);
   };
 
   if (loading) {
@@ -55,7 +46,12 @@ const Notes = () => {
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
-      <MainContent />
+      <Note notes={notes} />
+      <NewNotePane
+        fetchNotes={fetchNotes}
+        setShowPane={setShowNewNotePane}
+        showPane={showNewNotePane}
+      />
       {showDeleteAlert && (
         <DeleteAlert
           refetch={fetchNotes}
