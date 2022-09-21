@@ -25,6 +25,10 @@ const Notes = () => {
     setLoading(false);
   };
 
+  const handleDelete = () => {
+    setShowDeleteAlert(true);
+  };
+
   if (loading) {
     return <PageLoader />;
   }
@@ -46,7 +50,7 @@ const Notes = () => {
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
-      <Note notes={notes} />
+      <Note handleDelete={handleDelete} notes={notes} />
       <NewNotePane
         fetchNotes={fetchNotes}
         setShowPane={setShowNewNotePane}
