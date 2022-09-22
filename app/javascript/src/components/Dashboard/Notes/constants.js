@@ -93,3 +93,5 @@ export const NOTES = [
     createdAt: "2022-09-22",
   },
 ];
+
+export const LIST_ITEMS = ["Edit", "Delete"];
