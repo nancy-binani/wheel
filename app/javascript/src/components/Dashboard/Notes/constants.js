@@ -95,7 +95,7 @@ export const NOTES = [
       "Are you getting my texts??? she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting",
     executionStatus: "Getting Started",
     status: "Created",
-    createdAt: "2 hours ago",
+    createdAt: "2022-09-22",
   },
   {
     id: 2,
@@ -104,7 +104,7 @@ export const NOTES = [
       "Are you getting my texts??? she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting",
     executionStatus: "Getting Started",
     status: "Drafted",
-    createdAt: "2 hours ago",
+    createdAt: "2022-09-22",
   },
   {
     id: 3,
@@ -113,7 +113,7 @@ export const NOTES = [
       "Are you getting my texts??? she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting",
     executionStatus: "Getting Started",
     status: "Drafted",
-    createdAt: "2 hours ago",
+    createdAt: "2022-09-22",
   },
   {
     id: 4,
@@ -122,6 +122,6 @@ export const NOTES = [
       "Are you getting my texts??? she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting",
     executionStatus: "Getting Started",
     status: "Drafted",
-    createdAt: "2 hours ago",
+    createdAt: "2022-09-22",
   },
 ];
