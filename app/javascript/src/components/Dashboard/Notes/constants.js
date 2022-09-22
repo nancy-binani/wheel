@@ -94,4 +94,4 @@ export const NOTES = [
   },
 ];
 
-export const LIST_ITEMS = ["Edit", "Delete"];
+export const MENU_OPTIONS = ["Edit", "Delete"];
