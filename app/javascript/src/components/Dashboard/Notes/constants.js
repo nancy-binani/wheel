@@ -1,3 +1,4 @@
+import { buildSelectOptions } from "utils";
 import * as yup from "yup";
 
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
@@ -6,48 +7,15 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
   contact: null,
   tags: [],
 };
+export const CONTACTS = buildSelectOptions(["Admin", "Non Admin"]);
 
-export const CONTACTS = [
-  {
-    label: "Oliver Smith",
-    value: "Oliver",
-  },
-  {
-    label: "Sam Smith",
-    value: "Sam",
-  },
-  {
-    label: "Nancy Binani",
-    value: "Nancy",
-  },
-];
-
-export const TAGS = [
-  {
-    label: "Getting started",
-    value: "value1",
-  },
-  {
-    label: "Onboarding",
-    value: "value2",
-  },
-  {
-    label: "UX",
-    value: "value3",
-  },
-  {
-    label: "Bugs",
-    value: "value4",
-  },
-  {
-    label: "User flow",
-    value: "value5",
-  },
-  {
-    label: "V2",
-    value: "value6",
-  },
-];
+export const TAGS = buildSelectOptions([
+  "Getting Started",
+  "UX",
+  "Learning",
+  "Bugs",
+  "User Flow",
+]);
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
@@ -68,8 +36,8 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
         value: yup.string().oneOf(TAGS.map(tag => tag.value)),
       })
     )
-    .min(1, "Please select a tag")
-    .required("Please select a tag"),
+    .min(1, "Please select atleast one tag")
+    .required("Please select atleast one tag"),
 });
 
 export const NOTES_TABLE_COLUMN_DATA = [
