@@ -14,10 +14,15 @@ import SideMenu from "./SideMenu";
 import Note from "./Note";
 =======
 import List from "./List";
+<<<<<<< HEAD
 import NotesMenu from "./NotesMenu";
 >>>>>>> 0d6680a (Added common review changes)
 import NewNotePane from "./Pane/Create";
 >>>>>>> f728f71 (Fixed changes according to PR reviews)
+=======
+import NewNotePane from "./Pane/Create";
+import SideMenu from "./SideMenu";
+>>>>>>> 02f9bd1 (Upgraded version and performed review changes)
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -43,10 +48,14 @@ const Notes = () => {
   return (
     <>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <SideMenu />
 =======
       <NotesMenu />
 >>>>>>> 0d6680a (Added common review changes)
+=======
+      <SideMenu />
+>>>>>>> 02f9bd1 (Upgraded version and performed review changes)
       <Container>
         <Header
           menuBarToggle={() => {}}
