@@ -46,7 +46,6 @@ const Sidebar = () => {
   ];
 
   return (
-    <>
       <NeetoUISidebar
         appName={APP_NAME}
         changelogProps={{ id: "neetochangelog-trigger" }}
@@ -64,7 +63,6 @@ const Sidebar = () => {
         }}
         onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
-    </>
   );
 };
 
