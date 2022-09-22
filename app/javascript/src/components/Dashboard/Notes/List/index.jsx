@@ -3,9 +3,11 @@ import React from "react";
 import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Dropdown, Button, Avatar } from "neetoui";
 
-const Note = ({ notes }) =>
+import { calculateCreatedAgo, formatDateAndTime } from "../utils";
+
+const List = ({ notes }) =>
   notes.map(note => (
-    <>
+    <React.Fragment key={note.id}>
       <div className="border-slate-300  shadow-slate-300 box-border h-40 w-full items-start rounded-sm border-2 bg-white p-4 shadow-md">
         <div className="flex justify-between text-xl font-bold">
           <Typography style="h5">{note.title}</Typography>
@@ -27,7 +29,7 @@ const Note = ({ notes }) =>
           <div className="flex flex-row gap-2">
             <Clock />
             <Typography style="body2">
-              {note.status} {note.createdAt}
+              {note.status} {calculateCreatedAgo(note.createdAt)}
             </Typography>
             <Avatar
               size="small"
@@ -39,11 +41,14 @@ const Note = ({ notes }) =>
           </div>
         </div>
         {note.status === "Created" && (
-          <Button className="absolute right-10" label="Wednesday, 10:30AM" />
+          <Button
+            className="absolute right-10"
+            label={formatDateAndTime(note.createdAt)}
+          />
         )}
       </div>
       <br />
-    </>
+    </React.Fragment>
   ));
 
-export default Note;
+export default List;

@@ -5,7 +5,8 @@ import { Container, Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
-import Note from "./Note";
+import List from "./List";
+import NotesMenu from "./NotesMenu";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
@@ -30,37 +31,40 @@ const Notes = () => {
   }
 
   return (
-    <Container>
-      <Header
-        menuBarToggle={() => {}}
-        title="All Notes"
-        actionBlock={
-          <Button
-            icon="ri-add-line"
-            label="Add New Note"
-            onClick={() => setShowNewNotePane(true)}
-          />
-        }
-        searchProps={{
-          value: searchTerm,
-          onChange: e => setSearchTerm(e.target.value),
-        }}
-      />
-      <Note notes={notes} />
-      <NewNotePane
-        fetchNotes={fetchNotes}
-        setShowPane={setShowNewNotePane}
-        showPane={showNewNotePane}
-      />
-      {showDeleteAlert && (
-        <DeleteAlert
-          refetch={fetchNotes}
-          selectedNoteIds={selectedNoteIds}
-          setSelectedNoteIds={setSelectedNoteIds}
-          onClose={() => setShowDeleteAlert(false)}
+    <>
+      <NotesMenu />
+      <Container>
+        <Header
+          menuBarToggle={() => {}}
+          title="All Notes"
+          actionBlock={
+            <Button
+              icon="ri-add-line"
+              label="Add New Note"
+              onClick={() => setShowNewNotePane(true)}
+            />
+          }
+          searchProps={{
+            value: searchTerm,
+            onChange: e => setSearchTerm(e.target.value),
+          }}
         />
-      )}
-    </Container>
+        <List notes={notes} />
+        <NewNotePane
+          fetchNotes={fetchNotes}
+          setShowPane={setShowNewNotePane}
+          showPane={showNewNotePane}
+        />
+        {showDeleteAlert && (
+          <DeleteAlert
+            refetch={fetchNotes}
+            selectedNoteIds={selectedNoteIds}
+            setSelectedNoteIds={setSelectedNoteIds}
+            onClose={() => setShowDeleteAlert(false)}
+          />
+        )}
+      </Container>
+    </>
   );
 };
 
