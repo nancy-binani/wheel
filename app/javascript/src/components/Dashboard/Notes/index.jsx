@@ -6,8 +6,8 @@ import { Container, Header } from "neetoui/layouts";
 import { NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import List from "./List";
-import NotesMenu from "./NotesMenu";
 import NewNotePane from "./Pane/Create";
+import SideMenu from "./SideMenu";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -32,7 +32,7 @@ const Notes = () => {
 
   return (
     <>
-      <NotesMenu />
+      <SideMenu />
       <Container>
         <Header
           menuBarToggle={() => {}}
