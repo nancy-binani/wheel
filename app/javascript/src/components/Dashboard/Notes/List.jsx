@@ -3,7 +3,7 @@ import React from "react";
 import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Dropdown, Button, Avatar } from "neetoui";
 
-import { MENU_OPTIONS as menuOptions } from "./constants";
+import { MENU_OPTIONS } from "./constants";
 import { calculateCreatedAgo, formatDateAndTime } from "./utils";
 
 const { Menu, MenuItem } = Dropdown;
@@ -16,7 +16,7 @@ const List = ({ notes }) => (
             <Typography style="h5">{note.title}</Typography>
             <Dropdown buttonStyle="text" icon={MenuVertical}>
               <Menu>
-                {menuOptions.map((item, idx) => (
+                {MENU_OPTIONS.map((item, idx) => (
                   <MenuItem.Button key={idx}>{item}</MenuItem.Button>
                 ))}
               </Menu>
