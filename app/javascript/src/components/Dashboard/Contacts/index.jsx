@@ -3,13 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import DeleteAlert from "./DeleteAlert";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -38,9 +36,6 @@ const Contacts = () => {
           }}
         />
         <Table />
-        {showDeleteAlert && (
-          <DeleteAlert onClose={() => setShowDeleteAlert(false)} />
-        )}
       </Container>
     </>
   );

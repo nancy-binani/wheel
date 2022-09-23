@@ -47,7 +47,7 @@ export const buildContactsColumnData = handleDelete => [
       <Dropdown buttonStyle="text" icon={MenuHorizontal}>
         <Menu>
           <MenuItem.Button>Edit</MenuItem.Button>
-          <MenuItem.Button style="danger" onClick={handleDelete}>
+          <MenuItem.Button style="danger">
             Delete
           </MenuItem.Button>
         </Menu>

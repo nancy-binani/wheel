@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 import { Alert, Toastr } from "neetoui";
 
-const DeleteAlert = ({ refetch, onClose }) => {
+const DeleteAlert = ({ refetch, onClose, title }) => {
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = () => {
-    Toastr.success("Note deleted");
+    Toastr.success("Note is deleted successfully");
     setDeleting(true);
     onClose();
     refetch();
@@ -16,8 +16,8 @@ const DeleteAlert = ({ refetch, onClose }) => {
     <Alert
       isOpen
       isSubmitting={deleting}
-      message="Are you sure you want to continue? This cannot be undone."
-      title="Delete this Note?"
+      message={`Are you sure you want to continue deleting ${title}? This cannot be undone.`}
+      title="Delete the Note?"
       onClose={onClose}
       onSubmit={handleDelete}
     />
