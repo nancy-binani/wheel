@@ -3,14 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import DeleteAlert from "./DeleteAlert";
-import NewContactPane from "./Pane/Create";
+import Create from "./Pane/Create";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [showNewNotePane, setShowNewNotePane] = useState(false);
 
@@ -45,13 +43,7 @@ const Contacts = () => {
           }}
         />
         <Table />
-        <NewContactPane
-          setShowPane={setShowNewNotePane}
-          showPane={showNewNotePane}
-        />
-        {showDeleteAlert && (
-          <DeleteAlert onClose={() => setShowDeleteAlert(false)} />
-        )}
+        <Create setShowPane={setShowNewNotePane} showPane={showNewNotePane} />
       </Container>
     </>
   );
