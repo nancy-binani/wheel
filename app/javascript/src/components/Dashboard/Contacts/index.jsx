@@ -29,7 +29,7 @@ const Contacts = () => {
       <SideMenu />
       <Container>
         <Header
-          title="Notes"
+          title="All Contacts"
           actionBlock={
             <Button
               icon="ri-add-line"
