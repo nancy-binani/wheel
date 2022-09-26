@@ -1,29 +1,29 @@
 import React from "react";
 
-import { Pane, Typography } from "neetoui";
+import { Pane as NeetoUIPane, Typography } from "neetoui";
 
 import Form from "./Form";
 
 import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-const NewNotePane = ({ fetchNotes, showPane, setShowPane }) => {
+const Pane = ({ fetchNotes, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
-    <Pane isOpen={showPane} onClose={onClose}>
-      <Pane.Header>
+    <NeetoUIPane isOpen={showPane} onClose={onClose}>
+      <NeetoUIPane.Header>
         <Typography style="h2" weight="semibold">
           Create a New Note
         </Typography>
-      </Pane.Header>
+      </NeetoUIPane.Header>
       <Form
         isEdit={false}
         note={NOTES_FORM_INITIAL_FORM_VALUES}
         refetch={fetchNotes}
         onClose={onClose}
       />
-    </Pane>
+    </NeetoUIPane>
   );
 };
 
-export default NewNotePane;
+export default Pane;
