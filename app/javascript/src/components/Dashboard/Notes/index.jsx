@@ -5,7 +5,7 @@ import { Container, Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
 import List from "./List";
-import Pane from "./Pane/Create";
+import Create from "./Pane/Create";
 import SideMenu from "./SideMenu";
 
 const Notes = () => {
@@ -48,7 +48,7 @@ const Notes = () => {
           }}
         />
         <List fetchNotes={fetchNotes} notes={notes} />
-        <Pane
+        <Create
           fetchNotes={fetchNotes}
           setShowPane={setShowNewNotePane}
           showPane={showNewNotePane}
