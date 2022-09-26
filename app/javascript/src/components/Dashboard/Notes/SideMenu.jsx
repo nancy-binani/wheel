@@ -4,15 +4,7 @@ import { Search, Plus, Settings } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
-<<<<<<< HEAD
-<<<<<<< HEAD:app/javascript/src/components/Dashboard/Notes/SideMenu.jsx
 const SideMenu = () => {
-=======
-const NotesMenu = () => {
->>>>>>> 0d6680a (Added common review changes):app/javascript/src/components/Dashboard/Notes/NotesMenu.jsx
-=======
-const SideMenu = () => {
->>>>>>> 02f9bd1 (Upgraded version and performed review changes)
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
@@ -75,12 +67,5 @@ const SideMenu = () => {
   );
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD:app/javascript/src/components/Dashboard/Notes/SideMenu.jsx
+
 export default SideMenu;
-=======
-export default NotesMenu;
->>>>>>> 0d6680a (Added common review changes):app/javascript/src/components/Dashboard/Notes/NotesMenu.jsx
-=======
-export default SideMenu;
->>>>>>> 02f9bd1 (Upgraded version and performed review changes)
