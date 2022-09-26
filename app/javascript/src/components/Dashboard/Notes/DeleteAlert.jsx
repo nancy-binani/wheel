@@ -6,7 +6,7 @@ const DeleteAlert = ({ refetch, onClose, title }) => {
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = () => {
-    Toastr.success("Note deleted");
+    Toastr.success("Note is deleted successfully");
     setDeleting(true);
     onClose();
     refetch();
@@ -16,7 +16,7 @@ const DeleteAlert = ({ refetch, onClose, title }) => {
     <Alert
       isOpen
       isSubmitting={deleting}
-      message={`Are you sure you want to continue deleting${title}? This cannot be undone.`}
+      message={`Are you sure you want to continue deleting ${title}? This cannot be undone.`}
       title="Delete the Note?"
       onClose={onClose}
       onSubmit={handleDelete}

@@ -13,7 +13,6 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState("");
-
   const [notes, setNotes] = useState(NOTES);
 
   useEffect(() => {
