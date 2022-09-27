@@ -93,5 +93,3 @@ export const NOTES = [
     createdAt: "2022-09-22",
   },
 ];
-
-export const MENU_OPTIONS = ["Edit", "Delete"];

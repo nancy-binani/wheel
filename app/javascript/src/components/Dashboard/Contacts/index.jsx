@@ -3,24 +3,20 @@ import React, { useEffect, useState } from "react";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import { NOTES } from "./constants";
-import List from "./List";
 import Create from "./Pane/Create";
 import SideMenu from "./SideMenu";
+import Table from "./Table";
 
-const Notes = () => {
+const Contacts = () => {
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
   const [showNewNotePane, setShowNewNotePane] = useState(false);
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [notes, setNotes] = useState(NOTES);
-
   useEffect(() => {
-    fetchNotes();
+    fetchContacts();
   }, []);
 
-  const fetchNotes = () => {
-    setNotes(notes);
+  const fetchContacts = () => {
     setLoading(false);
   };
 
@@ -33,12 +29,11 @@ const Notes = () => {
       <SideMenu />
       <Container>
         <Header
-          menuBarToggle={() => {}}
-          title="All Notes"
+          title="All Contacts"
           actionBlock={
             <Button
               icon="ri-add-line"
-              label="Add New Note"
+              label="Add New Contact"
               onClick={() => setShowNewNotePane(true)}
             />
           }
@@ -47,15 +42,11 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <List fetchNotes={fetchNotes} notes={notes} />
-        <Create
-          fetchNotes={fetchNotes}
-          setShowPane={setShowNewNotePane}
-          showPane={showNewNotePane}
-        />
+        <Table />
+        <Create setShowPane={setShowNewNotePane} showPane={showNewNotePane} />
       </Container>
     </>
   );
 };
 
-export default Notes;
+export default Contacts;
