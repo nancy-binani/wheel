@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Table as NeetoUITable } from "neetoui";
+import { Table as NeetoUITable, Pagination } from "neetoui";
 
 import { buildContactsColumnData } from "./utils";
 
 import { CONTACT_DETAILS } from "../constants";
 
 const Table = ({ handleDelete }) => (
-  <div className="notes-table-height w-full">
+  <>
     <NeetoUITable
       allowRowClick
       rowSelection
@@ -16,7 +16,8 @@ const Table = ({ handleDelete }) => (
       onRowClick={() => {}}
       onRowSelect={() => {}}
     />
-  </div>
+    <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+  </>
 );
 
 export default Table;

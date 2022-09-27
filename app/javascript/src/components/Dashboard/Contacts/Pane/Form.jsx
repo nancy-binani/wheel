@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import { Formik, Form } from "formik";
+import { Formik, Form as NeetoUIForm } from "formik";
 import { Button, Pane, Toastr } from "neetoui";
 import { Input, Textarea, Select } from "neetoui/formik";
 
 import { CONTACTS_FORM_VALIDATION_SCHEMA, ROLES } from "../constants";
 
-const ContactForm = ({ isEdit, contact, onClose }) => {
+const Form = ({ isEdit, contact, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
@@ -24,7 +24,7 @@ const ContactForm = ({ isEdit, contact, onClose }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full">
+        <NeetoUIForm className="w-full">
           <Pane.Body className="space-y-6">
             <div className="flex w-full flex-row space-x-3">
               <Input
@@ -78,10 +78,10 @@ const ContactForm = ({ isEdit, contact, onClose }) => {
               onClick={onClose}
             />
           </Pane.Footer>
-        </Form>
+        </NeetoUIForm>
       )}
     </Formik>
   );
 };
 
-export default ContactForm;
+export default Form;

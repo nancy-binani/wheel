@@ -4,17 +4,14 @@ import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
-import DeleteAlert from "./DeleteAlert";
 import List from "./List";
-import NewNotePane from "./Pane/Create";
+import Create from "./Pane/Create";
 import SideMenu from "./SideMenu";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState(NOTES);
 
   useEffect(() => {
@@ -49,20 +46,12 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <List notes={notes} />
-        <NewNotePane
+        <List fetchNotes={fetchNotes} notes={notes} />
+        <Create
           fetchNotes={fetchNotes}
           setShowPane={setShowNewNotePane}
           showPane={showNewNotePane}
         />
-        {showDeleteAlert && (
-          <DeleteAlert
-            refetch={fetchNotes}
-            selectedNoteIds={selectedNoteIds}
-            setSelectedNoteIds={setSelectedNoteIds}
-            onClose={() => setShowDeleteAlert(false)}
-          />
-        )}
       </Container>
     </>
   );

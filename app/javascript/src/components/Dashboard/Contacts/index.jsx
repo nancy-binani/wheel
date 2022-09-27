@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-import { Button, PageLoader, Toastr } from "neetoui";
+import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import DeleteAlert from "./DeleteAlert";
-import NewContactPane from "./Pane/Create";
+import Create from "./Pane/Create";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [deleting, setDeleting] = useState(false);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
 
   useEffect(() => {
     fetchContacts();
@@ -26,9 +25,9 @@ const Contacts = () => {
   if (loading) {
     return <PageLoader />;
   }
+
   const handleDelete = () => {
-    Toastr.success("Contact is deleted successfully.");
-    setDeleting(true);
+    setShowDeleteAlert(true);
   };
 
   return (
@@ -36,7 +35,7 @@ const Contacts = () => {
       <SideMenu />
       <Container>
         <Header
-          title="Notes"
+          title="All Contacts"
           actionBlock={
             <Button
               icon="ri-add-line"
@@ -50,14 +49,10 @@ const Contacts = () => {
           }}
         />
         <Table handleDelete={handleDelete} />
-        <NewContactPane
-          setShowPane={setShowNewNotePane}
-          showPane={showNewNotePane}
-        />
+        <Create setShowPane={setShowNewNotePane} showPane={showNewNotePane} />
         {showDeleteAlert && (
           <DeleteAlert
-            deleting={deleting}
-            handleDelete={handleDelete}
+            setShowDeleteAlert={setShowDeleteAlert}
             onClose={() => setShowDeleteAlert(false)}
           />
         )}
