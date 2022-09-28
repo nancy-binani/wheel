@@ -6,12 +6,13 @@ import { buildContactsColumnData } from "./utils";
 
 import { CONTACT_DETAILS } from "../constants";
 
-const Table = () => (
+
+const Table = ({ handleDelete }) => (
   <>
     <NeetoUITable
       allowRowClick
       rowSelection
-      columnData={buildContactsColumnData()}
+      columnData={buildContactsColumnData(handleDelete)}
       rowData={CONTACT_DETAILS}
       onRowClick={() => {}}
       onRowSelect={() => {}}

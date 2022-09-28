@@ -11,7 +11,6 @@ import SideMenu from "./SideMenu";
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [notes, setNotes] = useState(NOTES);
 
