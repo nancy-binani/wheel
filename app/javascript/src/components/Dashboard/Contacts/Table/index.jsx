@@ -6,7 +6,6 @@ import { buildContactsColumnData } from "./utils";
 
 import { CONTACT_DETAILS } from "../constants";
 
-
 const Table = ({ handleDelete }) => (
   <>
     <NeetoUITable
@@ -17,7 +16,9 @@ const Table = ({ handleDelete }) => (
       onRowClick={() => {}}
       onRowSelect={() => {}}
     />
-    <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+    <div className="flex w-full flex-row justify-end">
+      <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+    </div>
   </>
 );
 
