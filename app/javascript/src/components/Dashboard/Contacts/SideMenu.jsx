@@ -8,11 +8,11 @@ const SideMenu = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
-    <MenuBar showMenu title="Notes">
+    <MenuBar showMenu title="Contacts">
       <MenuBar.Block active count={13} label="All" />
-      <MenuBar.Block count={2} label="Users" />
-      <MenuBar.Block count={7} label="Leads" />
-      <MenuBar.Block count={4} label="Visitors" />
+      <MenuBar.Block count={2} label="Archived" />
+      <MenuBar.Block count={7} label="Completed" />
+      <MenuBar.Block count={4} label="Phase 2" />
       <MenuBar.SubTitle
         iconProps={[
           {
@@ -35,9 +35,6 @@ const SideMenu = () => {
         collapse={isSearchCollapsed}
         onCollapse={() => setIsSearchCollapsed(true)}
       />
-      <MenuBar.Block count={80} label="Europe" />
-      <MenuBar.Block count={60} label="Middle-East" />
-      <MenuBar.Block count={60} label="Asia" />
       <MenuBar.SubTitle
         iconProps={[
           {
@@ -60,12 +57,8 @@ const SideMenu = () => {
           Tags
         </Typography>
       </MenuBar.SubTitle>
-      <MenuBar.Block count={80} label="Europe" />
-      <MenuBar.Block count={60} label="Middle-East" />
-      <MenuBar.Block count={60} label="Asia" />
     </MenuBar>
   );
 };
-
 
 export default SideMenu;

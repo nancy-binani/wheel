@@ -46,23 +46,23 @@ const Sidebar = () => {
   ];
 
   return (
-    <NeetoUISidebar
-      appName={APP_NAME}
-      changelogProps={{ id: "neetochangelog-trigger" }}
-      isCollapsed={isSidebarCollapsed}
-      navLinks={SIDENAV_LINKS}
-      organizationInfo={{
-        name: "Wheel",
-        subdomain: "bigbinary.com",
-      }}
-      profileInfo={{
-        name: `${user.first_name} ${user.last_name}`,
-        imageUrl: "https://randomuser.me/api/portraits/women/90.jpg",
-        email: user.email,
-        bottomLinks,
-      }}
-      onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-    />
+      <NeetoUISidebar
+        appName={APP_NAME}
+        changelogProps={{ id: "neetochangelog-trigger" }}
+        isCollapsed={isSidebarCollapsed}
+        navLinks={SIDENAV_LINKS}
+        organizationInfo={{
+          name: "Wheel",
+          subdomain: "bigbinary.com",
+        }}
+        profileInfo={{
+          name: `${user.first_name} ${user.last_name}`,
+          imageUrl: "https://randomuser.me/api/portraits/women/90.jpg",
+          email: user.email,
+          bottomLinks,
+        }}
+        onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+      />
   );
 };
 
