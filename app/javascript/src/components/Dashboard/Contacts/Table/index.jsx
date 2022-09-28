@@ -6,6 +6,7 @@ import { buildContactsColumnData } from "./utils";
 
 import { CONTACT_DETAILS } from "../constants";
 
+
 const Table = ({ handleDelete }) => (
   <>
     <NeetoUITable
