@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { MenuVertical, Clock } from "neetoicons";
-import { Typography, Dropdown, Button, Avatar } from "neetoui";
+import { Typography, Dropdown, Button, Avatar, Tooltip } from "neetoui";
 
 import DeleteAlert from "./DeleteAlert";
 import { calculateCreatedAgo, formatDateAndTime } from "./utils";
@@ -39,32 +39,32 @@ const List = ({ notes, fetchNotes }) => {
           {note.description}
         </Typography>
         <hr />
-        <div className="mt-4 flex flex-row justify-between text-gray-500">
+        <div className="flex items-center justify-between">
           <Button
-            className="text-gray-500"
-            label={note.executionStatus}
+            className="mx-2 mt-3"
+            label="Getting Started"
             style="secondary"
           />
-          <div className="flex flex-row gap-2">
-            <Clock />
-            <Typography style="body2">
-              {`${note.status} ${calculateCreatedAgo(note.createdAt)}`}
-            </Typography>
+          <div className="flex justify-between">
+            <Clock className="mx-1 mt-3" />
+            <Tooltip
+              content={formatDateAndTime(note.createdAt)}
+              followCursor="horizontal"
+              position="bottom"
+            >
+              <Typography className="mx-1 mt-4" style="body3">
+                Created {calculateCreatedAgo(note.createdAt)}
+              </Typography>
+            </Tooltip>
             <Avatar
+              className="mx-1 mt-3"
               size="small"
               user={{
                 imageUrl: "https://i.pravatar.cc/300",
-                name: "Sam",
               }}
             />
           </div>
         </div>
-        {note.status === "Created" && (
-          <Button
-            className="absolute right-10"
-            label={formatDateAndTime(note.createdAt)}
-          />
-        )}
       </div>
       <br />
     </React.Fragment>
